@@ -50,6 +50,22 @@ body {
   color: #aaa;
 }
 
+.submit-score-button {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background: #0f3460;
+  color: #eee;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-score-button:hover {
+  background: #164b87;
+}
+
 /* Game Area */
 .game-area {
   display: flex;
@@ -137,4 +153,32 @@ body {
 .multiplier-display {
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* Leaderboard */
+.leaderboard {
+  padding: 1.5rem;
+  background: #16213e;
+  border-radius: 8px;
+}
+
+.leaderboard h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+.leaderboard-empty {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.leaderboard-list {
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #eee;
 }

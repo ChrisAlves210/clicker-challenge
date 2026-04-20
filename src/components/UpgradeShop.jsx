@@ -1,12 +1,17 @@
 import React from 'react'
-import useGameStore from '../store/useGameStore'
+import { useDispatch, useSelector } from 'react-redux'
+import { buyUpgrade } from '../store/gameSlice'
 
 function UpgradeShop() {
-  const score = useGameStore((state) => state.score)
-  const multiplier = useGameStore((state) => state.multiplier)
-  const buyUpgrade = useGameStore((state) => state.buyUpgrade)
+  const dispatch = useDispatch()
+  const score = useSelector((state) => state.game.score)
+  const multiplier = useSelector((state) => state.game.multiplier)
 
   const cost = multiplier * 10
+
+  function handleBuyUpgrade() {
+    dispatch(buyUpgrade())
+  }
 
   return (
     <div className="upgrade-shop">
@@ -17,7 +22,7 @@ function UpgradeShop() {
           <p>Each click earns +1 more point</p>
         </div>
         <button
-          onClick={buyUpgrade}
+          onClick={handleBuyUpgrade}
           disabled={score < cost}
         >
           Buy ({cost} pts)

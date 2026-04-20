@@ -1,12 +1,13 @@
 import React from 'react'
-import useGameStore from '../store/useGameStore'
+import { useDispatch, useSelector } from 'react-redux'
+import { click } from '../store/gameSlice'
 
 function Clicker() {
-  const click = useGameStore((state) => state.click)
-  const multiplier = useGameStore((state) => state.multiplier)
+  const dispatch = useDispatch()
+  const multiplier = useSelector((state) => state.game.multiplier)
 
   function handleClick() {
-    click()
+    dispatch(click())
   }
 
   return (
